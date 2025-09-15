@@ -36,7 +36,7 @@ public class Main {
             }
 
             else if ( escolha != 0 && escolha != 1 && escolha != 2 && escolha != 3 ) {
-                System.out.println("Essa opção de promoção não está disponível!");
+                System.out.println("Esta opção de promoção não está disponível");
             }
 
         } while (escolha != 0);
