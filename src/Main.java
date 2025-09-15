@@ -13,9 +13,9 @@ public class Main {
         Cliente cliente = new Cliente(nome, cpf);
 
         int matricula = 417;
-        int escolha;
+        int escolha = -1; //inicializando variavel escolha
 
-        do {
+        while (escolha != 0){
             System.out.println(" ");
             System.out.println("Escolha uma das promoções abaixo:");
             System.out.println(" ");
@@ -36,10 +36,9 @@ public class Main {
             }
 
             else if ( escolha != 0 && escolha != 1 && escolha != 2 && escolha != 3 ) {
-                System.out.println("Esta opção de promoção não está disponível");
+                System.out.println("Opção de promoção não disponível");
             }
-
-        } while (escolha != 0);
+        }
 
         cliente.calculaTotalCompra();
         scanner.close(); //fechando o scanner
@@ -48,11 +47,7 @@ public class Main {
     public static Computador criarPromocao(int codigo, int matricula) {
         switch (codigo) {
             case 1:
-                return new Computador(
-                        "Apple",
-                        matricula,
-                        new SistemaOperacional("macOS Sequoia", 64),
-                        new HardwareBasico[]{
+                return new Computador("Apple", matricula, new SistemaOperacional("macOS Sequoia", 64), new HardwareBasico[]{
                                 new HardwareBasico("Pentium Core i3", 2200),
                                 new HardwareBasico("Memória RAM", 8),
                                 new HardwareBasico("HD", 500)
@@ -61,11 +56,7 @@ public class Main {
                 );
 
             case 2:
-                return new Computador(
-                        "Samsung",
-                        matricula + 1234,
-                        new SistemaOperacional("Windows 8", 64),
-                        new HardwareBasico[]{
+                return new Computador("Samsung", matricula + 1234, new SistemaOperacional("Windows 8", 64), new HardwareBasico[]{
                                 new HardwareBasico("Pentium Core i5", 3370),
                                 new HardwareBasico("Memória RAM", 16),
                                 new HardwareBasico("HD", 1000)
@@ -74,11 +65,7 @@ public class Main {
                 );
 
             case 3:
-                return new Computador(
-                        "Dell",
-                        matricula + 5678,
-                        new SistemaOperacional("Windows 10", 64),
-                        new HardwareBasico[]{
+                return new Computador("Dell", matricula + 5678, new SistemaOperacional("Windows 10", 64), new HardwareBasico[]{
                                 new HardwareBasico("Pentium Core i7", 4500),
                                 new HardwareBasico("Memória RAM", 32),
                                 new HardwareBasico("HD", 2000)
